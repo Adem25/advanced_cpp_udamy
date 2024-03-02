@@ -31,4 +31,5 @@
 *.out
 *.app
 
-*.txt
+test.txt
+population.txt
