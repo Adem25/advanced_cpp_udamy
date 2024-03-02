@@ -31,5 +31,10 @@
 *.out
 *.app
 
-test.txt
-population.txt
+*.tlog
+*.ilk
+*.log
+*.idb
+*.pdb
+*.vcxproj*
+*.txt
