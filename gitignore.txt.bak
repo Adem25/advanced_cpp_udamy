@@ -139,3 +139,4 @@ mono_crash.*
 *.vs
 *.txt
 *.bak
+*.bin
