@@ -1,14 +1,12 @@
 #pragma once
+#include "WritingTextFiles.h"
 #include<string>
 
 using namespace std;
 
-class ReadingTextFile
+class ReadingTextFile : public WritingTextFiles
 {
 public:
-	void setFileName(string name);
-	void readFile();
-private:
-	string fileName;
+	void readTxtFile();
 };
 

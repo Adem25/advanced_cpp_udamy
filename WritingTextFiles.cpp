@@ -4,23 +4,23 @@
 
 using namespace std;
 
-void WritingTextFiles::setFileNameTxtData(string name) {
-	FileName = name;
+void WritingTextFiles::setFileName(string name) {
+	fileName = name;
 }
 
-void WritingTextFiles::writeInNextLine(string text) {
+void WritingTextFiles::writeInNextLineTxt(string text) {
 	ofstream outputFile;
 
-	if (FileName.find(".txt") != string::npos) {
-		outputFile.open(FileName, ios::app);
+	if (fileName.find(".txt") != string::npos) {
+		outputFile.open(fileName, ios::app);
 		if (outputFile.is_open()) {
 			outputFile << text << endl;
 			outputFile.close();
-			cout << "Successfully written in: " << FileName << endl;
+			cout << "Successfully written in: " << fileName << endl;
 		}
 		else
 		{
-			cout << "Could not create file: " << FileName << endl;
+			cout << "Could not open file: " << fileName << endl;
 		}
 	}
 	else
@@ -30,19 +30,19 @@ void WritingTextFiles::writeInNextLine(string text) {
 
 }
 
-void WritingTextFiles::writeInNextLine(int value) {
+void WritingTextFiles::writeInNextLineTxt(int value) {
 	ofstream outputFile;
 
-	if (FileName.find(".txt") != string::npos) {
-		outputFile.open(FileName, ios::app);
+	if (fileName.find(".txt") != string::npos) {
+		outputFile.open(fileName, ios::app);
 		if (outputFile.is_open()) {
 			outputFile << value << endl;
 			outputFile.close();
-			cout << "Successfully written in: " << FileName << endl;
+			cout << "Successfully written in: " << fileName << endl;
 		}
 		else
 		{
-			cout << "Could not create file: " << FileName << endl;
+			cout << "Could not open file: " << fileName << endl;
 		}
 	}
 	else
@@ -55,15 +55,15 @@ void WritingTextFiles::writeInNextLine(int value) {
 void WritingTextFiles::clearFile() {
 	ofstream outputFile;
 
-	if (FileName.find(".txt") != string::npos) {
-		outputFile.open(FileName, ios::trunc);
+	if (fileName.find(".txt") != string::npos) {
+		outputFile.open(fileName, ios::trunc);
 		if (outputFile.is_open()) {
 			outputFile.close();
-			cout << "Successfully cleared the content in: " << FileName << endl;
+			cout << "Successfully cleared the content in: " << fileName << endl;
 		}
 		else
 		{
-			cout << "Could not find file: " << FileName << endl;
+			cout << "Could not open file: " << fileName << endl;
 		}
 	}
 	else

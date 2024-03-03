@@ -6,11 +6,11 @@ using namespace std;
 class WritingTextFiles
 {
 public:	
-	void setFileNameTxtData(string name);
-	void writeInNextLine(string text);
-	void writeInNextLine(int value);
+	string fileName;
+
+	void setFileName(string name);
+	void writeInNextLineTxt(string text);
+	void writeInNextLineTxt(int value);
 	void clearFile();
-private:	
-	string FileName;
 };
 

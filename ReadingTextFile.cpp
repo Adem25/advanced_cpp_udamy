@@ -1,14 +1,12 @@
 #include "ReadingTextFile.h"
+#include "WritingTextFiles.h"
 #include<iostream>
 #include<fstream>
 
 using namespace std;
 
-void ReadingTextFile::setFileName(string name) {
-	fileName = name;
-}
 
-void ReadingTextFile::readFile() {
+void ReadingTextFile::readTxtFile() {
 	ifstream inFile;
 
 	if (fileName.find(".txt") != string::npos) 
@@ -21,12 +19,18 @@ void ReadingTextFile::readFile() {
 			{
 				getline(inFile, line);
 				cout << line << endl;
+				inFile >> ws;
+				if (!inFile)
+				{
+					break;
+				}
 			}
+			cout << "End of " << fileName << endl;
 			inFile.close();
 		}
 		else
 		{
-			cout << "Could not create file: " << fileName << endl;
+			cout << "Could not open file: " << fileName << endl;
 		}
 	}
 	else

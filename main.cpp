@@ -6,7 +6,9 @@
 #include "ExceptionCatchingOrdner.h"
 #include "WritingTextFiles.h"
 #include "ReadingTextFile.h"
-
+#include "ParsingTextFile.h"
+#include "StructsAndPadding.h"
+#include "ReadAndWriteBinaryFile.h"
 
 using namespace std;
 
@@ -19,6 +21,8 @@ int main() {
 	ExceptionCatchingOrdner ECO;
 	WritingTextFiles WTF;
 	ReadingTextFile RTF;
+	ParsingTextFile PTF;
+	ReadAndWriteBinaryFile RWB;
 
 	EB.Run(error);
 	SE.Run();
@@ -26,13 +30,23 @@ int main() {
 	TV.Run();
 	ECO.Run(error);
 
-	/*WTF.setFileNameTxtData("test.txt");
-	WTF.writeInNextLine("This is line 2");
-	WTF.writeInNextLine(22);
+	/*WTF.setFileName("test.txt");
+	WTF.writeInNextLineTxt("This is line 2");
+	WTF.writeInNextLineTxt(22);
 	//WTF.clearFile();*/
 
 	RTF.setFileName("test.txt");
-	RTF.readFile();
+	RTF.readTxtFile();
+
+	PTF.setFileName("population.txt");
+	PTF.parsePopulationExampleTxt();
+
+	getExampleStructwithPadding();
+	getExampleStructwithoutPadding();
+
+	RWB.setFileName("testbin.bin");
+	//RWB.writeInBinaryFile({"hans", 300, 0.1});
+	RWB.readFromBinaryFile();
 
 	return 0;
 }

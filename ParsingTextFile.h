@@ -1,7 +1,13 @@
 #pragma once
-class ParsingTextFile
+#include "WritingTextFiles.h"
+#include<string>
+
+using namespace std;
+
+class ParsingTextFile : public WritingTextFiles
 {
 public:
-	void setFileName();
+	void parsePopulationExampleTxt();
+
 };
 
