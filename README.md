@@ -1,2 +1,2 @@
 # advanced_cpp_udamy
-Learn Advanced C++ Programming from Udamy
+These are my notes and code from the Udamy course: Learn Advanced C++ Programming

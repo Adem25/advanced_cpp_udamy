@@ -9,6 +9,7 @@
 #include "ParsingTextFile.h"
 #include "StructsAndPadding.h"
 #include "ReadAndWriteBinaryFile.h"
+#include "Vectors.h"
 
 using namespace std;
 
@@ -23,6 +24,7 @@ int main() {
 	ReadingTextFile RTF;
 	ParsingTextFile PTF;
 	ReadAndWriteBinaryFile RWB;
+	Vectors V;
 
 	EB.Run(error);
 	SE.Run();
@@ -47,6 +49,16 @@ int main() {
 	RWB.setFileName("testbin.bin");
 	//RWB.writeInBinaryFile({"hans", 300, 0.1});
 	RWB.readFromBinaryFile();
+
+	V.createStrVector("one");
+	V.createStrVector("two");
+	V.createStrVector("three");
+	V.printStrVector();
+	V.iterateStrVector();
+
+	V.vectorsAndMemory();
+
+	V.TwoDimensionalVectors();
 
 	return 0;
 }

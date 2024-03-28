@@ -4,7 +4,7 @@ class Base
 {
 public:
     void Method1();
-    //virtual allows to overwrite
+    //virtual allows to overwrite if you have something like Base* basePtr = new Derived();
     virtual void Method2();
 };
 
